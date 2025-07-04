@@ -62,6 +62,11 @@ public class AdminController extends HttpServlet {
             return;
         }
 
+        if (!req.getContentType().toLowerCase().startsWith("multipart/form-data")) {
+            sendError(resp, "Content-type must be multipart/form-data");
+            return;
+        }
+
         Part filePart = req.getPart("profile_image");
         if (filePart == null || filePart.getSize() == 0) {
             writeJson(resp, 401, "No image file provided.");

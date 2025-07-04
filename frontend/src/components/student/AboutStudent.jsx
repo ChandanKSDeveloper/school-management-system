@@ -52,7 +52,7 @@ const AboutStudent = () => {
     <div className="about-wrapper">
       <div className="about-card">
         <div className="about-left">
-          {teacher.photo ? (
+          {student.photo ? (
             <img 
               src={student.photo} 
               alt="student" 

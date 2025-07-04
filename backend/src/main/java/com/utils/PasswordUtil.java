@@ -4,6 +4,7 @@ package com.utils;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import java.security.SecureRandom;
+import java.util.Arrays;
 import java.util.Base64;
 
 public class PasswordUtil {
@@ -33,6 +34,11 @@ public class PasswordUtil {
         try {
             byte[] salt = Base64.getDecoder().decode(parts[0]);
             String hash = Base64.getEncoder().encodeToString(pbkdf2(password.toCharArray(), salt));
+//            System.out.println("Raw password: " + password);
+//            System.out.println("Decoded salt: " + Arrays.toString(salt));
+//            System.out.println("Generated hash: " + hash);
+//            System.out.println("Stored hash: " + parts[1]);
+
             return hash.equals(parts[1]);
         } catch (IllegalArgumentException e) {
             // Handle case where Base64 decoding fails

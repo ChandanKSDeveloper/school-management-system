@@ -36,7 +36,7 @@ const AddForm = () => {
 
   return (
     <div className="form-wrapper">
-      <Toaster position="top-right" reverseOrder={false} />
+      {/* <Toaster position="top-right" reverseOrder={false} /> */}
       <div className="form-card">
         <h1 className="form-title">Add New Teacher</h1>
 

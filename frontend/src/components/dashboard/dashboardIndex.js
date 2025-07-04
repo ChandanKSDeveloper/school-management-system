@@ -1,6 +1,9 @@
+import AdminDashBoard from "./AdminDashBoard";
 import StudentDashboard from "./StudentDashBoard";
 import TeacherDashBoard from "./TeacherDashBoard";
 
-export{
-TeacherDashBoard,
-StudentDashboard}
+export {
+    TeacherDashBoard,
+    AdminDashBoard,
+    StudentDashboard
+}
