@@ -1,0 +1,106 @@
+import { useState } from "react";
+import { useAuth } from '../../context/AuthContext';
+import './style.css'
+const Login = () => {
+
+    const [formData, setFormData] = useState({
+        username: '',
+        password: ''
+    });
+
+      const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+    const {user, login, error, loading} = useAuth();
+
+  useEffect(() => {
+    // setError(null);
+    if (user) {
+      navigate('/home');
+    }
+  }, [user, navigate]);
+
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+
+    //     try {
+    //         const resp = await fetch("http://localhost:8080/api/auth/login", {
+    //             method: "POST",
+    //             headers: {
+    //                 'Content-Type': "application/json",
+    //             },
+    //             body: JSON.stringify(formData)
+    //         });
+
+    //         const data = await resp.json();
+
+    //         if (resp.ok) {
+    //             console.log('Login successful', data);
+    //         } else {
+    //             console.error('Login failed', data);
+    //         }
+    //     } catch (error) {
+    //         console.error('Error:', error);
+    //     }
+    // }
+
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await login({ username, password });
+    } catch (err) {
+      // Error is already handled in AuthContext
+      console.error('Login error:', err);
+    }
+  };
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }))
+    }
+    return (
+        <div className="login-wrapper">
+            <div className="login-card">
+                <div className="login-header">
+                    <h1>Login</h1>
+                    <p>Enter your username and password to log in.</p>
+                </div>
+
+                <form onSubmit={handleSubmit} className="login-form">
+                    <div className="form-group">
+                        <label htmlFor="username">Username</label>
+                        <input
+                            type="text"
+                            name="username"
+                            id="username"
+                            placeholder="your_username"
+                            value={formData.username}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="password">Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="••••••••"
+                            value={formData.password}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <button type="submit" className="login-button">
+                        Login
+                    </button>
+                </form>
+            </div>
+        </div>
+    )
+}
+
+export default Login;

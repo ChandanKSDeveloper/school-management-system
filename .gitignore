@@ -1,0 +1,47 @@
+# === OS / General ===
+.DS_Store
+Thumbs.db
+
+# === GLOBAL IDE / EDITOR CONFIG ===
+.idea/
+*.iml
+*.ipr
+*.iws
+*.swp
+
+# === LOG FILES ===
+*.log
+
+# === FRONTEND: React + Vite + Tailwind (frontend) ===
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.vite/
+frontend/.cache/
+frontend/.eslintcache
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+frontend/.vscode/
+
+# === BACKEND: Java + Maven + IntelliJ (backend) ===
+backend/target/
+backend/.idea/
+backend/.vscode/
+backend/*.iml
+backend/logs/
+backend/.classpath
+backend/.project
+backend/.settings/
+
+# === MAVEN ===
+**/target/
+**/dependency-reduced-pom.xml
+**/release.properties
+**/buildNumber.properties
+**/.mvn/timing.properties
+**/.mvn/wrapper/maven-wrapper.jar
+
+# === JAR files (optional - include only if using Maven Central or dependencies are managed) ===
+backend/lib/*.jar

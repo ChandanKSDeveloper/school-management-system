@@ -1,0 +1,110 @@
+/* dashboard.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f0f0f;
+  color: #e5e7eb;
+}
+
+.dashboard-wrapper {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f3f4f6;
+}
+
+.add-button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #6366f1;
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.student-table, .teacher-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1f2937;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.student-table th,
+.student-table td,
+.teacher-table th,
+.teacher-table td
+{
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.student-table thead, .teacher-table thead {
+  background-color: #374151;
+}
+
+.student-table th , .teacher-table th {
+  color: #d1d5db;
+  font-weight: 600;
+}
+
+.student-table tr, .teacher-table tr {
+  border-bottom: 1px solid #2d3748;
+}
+
+.student-table tbody tr:hover , .teacher-table tbody tr:hover {
+  background-color: #2e3a4c;
+}
+
+.edit-button,
+.delete-button {
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.edit-button {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #60a5fa;
+}
+
+.delete-button {
+  background-color: #ef4444;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #f87171;
+}
