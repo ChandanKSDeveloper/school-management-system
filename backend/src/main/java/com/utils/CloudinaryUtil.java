@@ -12,9 +12,9 @@ import java.util.Map;
 public class CloudinaryUtil {
 
     private static final Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap(
-            "cloud_name", "dtm2oy9i9",
-            "api_key", "478227949311214",
-            "api_secret", "1LjsJcwfhtVGvjZRpUSUbii8Q7U"
+            "cloud_name", "YOUR_CLOUD_NAME",
+            "api_key", "YOUR_API_KEY",
+            "api_secret", "YOUR_API_SECRET"
     ));
 
     public static Map uploadImage(InputStream imageStream, String fileName){
